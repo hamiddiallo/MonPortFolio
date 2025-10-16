@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm install && pnpm run build",
+  "installCommand": "pnpm install",
+  "functions": {
+    "app/**/*.ts": {
+      "maxDuration": 30
+    }
+  }
+}
