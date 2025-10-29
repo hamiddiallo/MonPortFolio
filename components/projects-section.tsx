@@ -27,7 +27,7 @@ const projects = [
       "Ce projet est un projet de classe qui met en pratique le pattern abstract factory pour creer deux fabriques de crackeur de mot de passe (en ligne et local). Et aussi le pattern composite pour creer un programme qui affiche le contenu de chaque repertoire depuis la racine specié comme la commande tree sur Linux",
     technologies: ["Java"],
     github: "https://github.com/hamiddiallo/ProjetDesignPattern.git",
-    demo: "https://demo.com",
+    demo: "",
     image: "/designPattern.png",
   },
   {
@@ -43,9 +43,9 @@ const projects = [
     title: "Application Web de Gestion de Stock",
     description:
       "Application web de gestion de stock et de facturation permettant de suivre les entrées et sorties de produits, gérer les fournisseurs, un paiement progressive des ventes, et générer automatiquement des factures claires et précises.",
-    technologies: ["Html", "Css", "JavaScript","PHP"],
+    technologies: ["Html", "Css", "JavaScript", "PHP"],
     github: "https://github.com/hamiddiallo/gestionStock.git",
-    demo: "https://demo.com",
+    demo: "",
     image: "/GestionStock.png",
   },
   {
@@ -53,8 +53,8 @@ const projects = [
     description:
       "Ce système de recommandation intelligent s’appuie sur des techniques de clustering, notamment l’algorithme K-Means, pour analyser les comportements des apprenants et regrouper leurs profils selon leurs centres d’intérêt. Intégré à une plateforme de streaming éducatif, il propose des contenus personnalisés afin d’optimiser l’expérience d’apprentissage de chaque utilisateur.",
     technologies: ["Python", "Scikit-Learn", "Pandas", "PHP"],
-    github: "https://github.com",
-    demo: "https://demo.com",
+    github: "",
+    demo: "",
     image: "/data-analytics-portfolio.png",
   },
 ]
@@ -86,9 +86,11 @@ export function ProjectsSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
                 </div>
+
                 <div className="p-6 space-y-4">
                   <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="outline" className="text-xs">
@@ -96,19 +98,24 @@ export function ProjectsSection() {
                       </Badge>
                     ))}
                   </div>
+
                   <div className="flex gap-3 pt-2">
-                    <Button size="sm" variant="outline" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button size="sm" asChild>
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Démo
-                      </a>
-                    </Button>
+                    {project.github && project.github.trim() !== "" && (
+                      <Button size="sm" variant="outline" asChild>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
+                    {project.demo && project.demo.trim() !== "" && (
+                      <Button size="sm" asChild>
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Démo
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>

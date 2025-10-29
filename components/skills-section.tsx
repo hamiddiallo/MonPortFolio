@@ -1,10 +1,11 @@
 import { Badge } from "@/components/ui/badge"
 
 const skillsData = {
-  "Langages de Programmation": ["JavaScript", "TypeScript", "Python", "Java", "C++", "C#", "PHP", "SQL"],
-  "Frameworks & Technologies": ["React", "Next.js", "Node.js", "Express", "Spring Boot", "Django", "Angular", "Vue.js"],
-  "Outils & Méthodologies": ["Git", "Docker", "Kubernetes", "CI/CD", "Agile/Scrum", "TDD", "Jira", "VS Code"],
-  "Bases de Données": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Firebase", "Oracle"],
+  "Langages de Programmation": ["JavaScript", "TypeScript", "Python", "Java",  "PHP", "SQL"],
+  "Frameworks & Technologies": ["React", "Next.js", "Node.js", "Express", "Spring Boot"],
+  "Outils & Méthodologies": ["Git", "Docker","CI/CD", "Agile/Scrum", "VS Code"],
+  "Bases de Données": ["PostgreSQL", "MySQL", "MongoDB", "Oracle"],
+  "Soft Skills": ["Résolution de problèmes", "Travail en équipe", "Communication efficace", "Adaptabilité"],
 }
 
 export function SkillsSection() {
