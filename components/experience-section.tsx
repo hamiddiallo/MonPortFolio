@@ -4,46 +4,32 @@ import { Badge } from "@/components/ui/badge"
 const experiences = [
   {
     title: "Stage de Développement Full-Stack",
-    company: "TechCorp Solutions",
-    period: "Juin 2024 - Août 2024",
+    company: "Atech Cybbersecurité",
+    period: "Juin 2024 - Juillet 2024",
     type: "Stage",
     description:
-      "Développement d'une application web de gestion de projets avec React et Node.js. Participation aux réunions agiles et collaboration avec l'équipe de développement.",
+      "Développement d’un système de recommandation intelligent pour une plateforme de streaming vidéo éducatif, utilisant Python et l’algorithme K-Means afin de proposer des contenus personnalisés selon le profil des apprenants. Collaboration avec l’équipe data et participation aux revues de sprint dans un cadre agile.",
     achievements: [
       "Création de 15+ composants React réutilisables",
       "Implémentation d'une API RESTful complète",
       "Amélioration des performances de 40%",
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "Docker"],
+    technologies: ["Python", "Scikit-Learn", "MySQL", "PHP"],
   },
   {
-    title: "Projet Académique - Système de Réservation",
+    title: "Projet Académique - Système de détection de fake news",
     company: "École Supérieure d'Informatique",
-    period: "Janvier 2024 - Mai 2024",
+    period: "juin 2023 - juillet 2023",
     type: "Projet Académique",
     description:
-      "Conception et développement d'un système de réservation en ligne pour une chaîne hôtelière. Travail en équipe de 4 personnes avec méthodologie Scrum.",
+      "Conception et développement d’un système intelligent de détection de fausses informations en ligne. Le projet avait pour objectif d’analyser et de classifier des articles d’actualité afin de distinguer les contenus véridiques des fake news, en s’appuyant sur l’apprentissage automatique et le traitement du langage naturel (NLP).",
     achievements: [
-      "Architecture microservices avec Spring Boot",
-      "Interface utilisateur responsive avec Angular",
-      "Intégration de paiement en ligne sécurisé",
+      "Mise en place d’un processus de collecte automatisée de données via le web scraping et l’outil Selenium pour constituer un corpus d’articles d’actualité.",
+      "Nettoyage, prétraitement et vectorisation des textes pour l’entraînement du modèle de classification.",
+      "Implémentation et évaluation d’algorithmes de machine learning en Python afin d’améliorer la précision de détection des fake news.",
     ],
-    technologies: ["Angular", "Spring Boot", "MySQL", "Stripe"],
-  },
-  {
-    title: "Développeur Web Junior",
-    company: "Digital Agency Pro",
-    period: "Juillet 2023 - Septembre 2023",
-    type: "Stage",
-    description:
-      "Développement de sites web pour des clients PME. Maintenance et optimisation de sites existants. Formation aux bonnes pratiques de développement web.",
-    achievements: [
-      "Livraison de 5 sites web clients",
-      "Optimisation SEO et performances",
-      "Formation à WordPress et PHP",
-    ],
-    technologies: ["HTML", "CSS", "JavaScript", "WordPress", "PHP"],
-  },
+    technologies: ["Python", "Selenium", "BeautifulSoup", "Scikit-learn", "Pandas"],
+  }
 ]
 
 export function ExperienceSection() {
