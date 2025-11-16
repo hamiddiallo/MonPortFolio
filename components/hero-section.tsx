@@ -56,7 +56,7 @@ export function HeroSection() {
 
           <div className="flex items-center justify-center gap-6 pt-8">
             <a
-              href="https://github.com"
+              href="https://github.com/hamiddiallo"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -72,7 +72,7 @@ export function HeroSection() {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="mailto:votre.email@example.com"
+              href="mailto:abdoulhamid026@gmail.com "
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail className="h-6 w-6" />
