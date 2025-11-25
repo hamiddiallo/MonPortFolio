@@ -6,7 +6,7 @@ export function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text">À Propos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text">À Propos de moi</h2>
             <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
           </div>
 
