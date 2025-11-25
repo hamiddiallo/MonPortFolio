@@ -3,8 +3,52 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
 export function HeroSection() {
+  const texts = [
+    "Ingénieur logiciel junior",
+    "Passionné par les technologies",
+    "Promoteur CI/CD",
+    "Développeur Full-Stack",
+    "Capacité d’adaptation rapide",
+    "Curieux et motivé",
+  ]
+
+  const [currentText, setCurrentText] = useState("")
+  const [index, setIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    const current = texts[index]
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // typing
+        if (charIndex < current.length) {
+          setCurrentText(current.slice(0, charIndex + 1))
+          setCharIndex(charIndex + 1)
+        } else {
+          // pause then delete
+          setTimeout(() => setIsDeleting(true), 1200)
+        }
+      } else {
+        // deleting
+        if (charIndex > 0) {
+          setCurrentText(current.slice(0, charIndex - 1))
+          setCharIndex(charIndex - 1)
+        } else {
+          // next text
+          setIsDeleting(false)
+          setIndex((index + 1) % texts.length)
+        }
+      }
+    }, isDeleting ? 40 : 80)
+
+    return () => clearTimeout(timeout)
+  }, [charIndex, isDeleting, index])
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       {/* Animated background elements */}
@@ -32,8 +76,10 @@ export function HeroSection() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance">
               <span className="gradient-text">Mamadou Abdoul Hamid Diallo</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground">
-              Ingénieur en Génie Logiciel
+
+            {/* TYPEWRITER EFFECT HERE */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground h-10">
+              <span className="border-r-2 border-primary pr-1 animate-pulse">{currentText}</span>
             </h2>
           </div>
 
