@@ -13,6 +13,14 @@ const projects = [
     image: "/restaurant.png",
   },
   {
+    title: "SaaS de Facturation & Gestion",
+    description: "Plateforme SaaS complète dédiée à la création et la gestion de factures professionnelles pour entreprises. Le système propose des fonctionnalités multi-devises (GNF/CFA), une gestion avancée des abonnements avec paiements mobiles intégrés (Orange Money, Wave), et un tableau de bord administrateur détaillé pour le suivi des revenus et des utilisateurs. Inclut également la génération de PDF et un support client intégré.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "NextAuth"],
+    github: "https://github.com/hamiddiallo/Facturation2.0.git",
+    demo: "https://facturation2-0.vercel.app/",
+    image: "/facturation-dashboard.png",
+  },
+  {
     title: "Projet de Résolution de Labyrinthe",
     description:
       "Ce projet implémente deux algorithmes classiques de parcours de graphes — DFS (Depth-First Search) et BFS (Breadth-First Search) — pour la résolution automatique de labyrinthes. Il permet de comparer leurs comportements en explorant les chemins possibles et en identifiant la route la plus courte vers la sortie. L’objectif est de démontrer les différences entre une exploration en profondeur et une exploration en largeur dans un environnement graphique interactif.",
