@@ -18,7 +18,7 @@ const projects = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "NextAuth"],
     github: "https://github.com/hamiddiallo/Facturation2.0.git",
     demo: "https://facturation2-0.vercel.app/",
-    image: "/facturation-dashboard.png",
+    image: "/saasFacturation.png",
   },
   {
     title: "Projet de Résolution de Labyrinthe",
