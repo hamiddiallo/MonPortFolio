@@ -1,6 +1,7 @@
 {
   "name": "my-v0-project",
   "version": "0.1.0",
+  "packageManager": "pnpm@9.15.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .next out",
-    "predeploy": "npm run clean && npm run build && node scripts/createNoJekyll.js",
+    "predeploy": "pnpm run clean && pnpm run build && node scripts/createNoJekyll.js",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
