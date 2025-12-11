@@ -5,10 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Désactiver les vérifications pour le build
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+
   typescript: {
     ignoreBuildErrors: true,
   },
