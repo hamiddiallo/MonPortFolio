@@ -4,6 +4,15 @@ import { Badge } from "@/components/ui/badge"
 
 const projects = [
   {
+    title: "Application Web de Gestion de Stock",
+    description:
+      "Application web de gestion de stock et de facturation permettant de suivre les entrées et sorties de produits, gérer les fournisseurs, un paiement progressive des ventes, et générer automatiquement des factures claires et précises.",
+    technologies: ["Html", "Css", "JavaScript", "PHP"],
+    github: "https://github.com/hamiddiallo/gestionStock.git",
+    demo: "https://hamid-stock.up.railway.app/",
+    image: "/GestionStock.png",
+  },
+  {
     title: "Site de Restaurant Gastronomique",
     description:
       "Site web moderne pour un restaurant avec système de réservation en ligne, menu digital interactif et présentation élégante des plats. L'application inclut une galerie photo des spécialités, les horaires d'ouverture, et les informations de contact. Design responsive mettant en valeur l'ambiance du restaurant avec des animations fluides et une interface utilisateur intuitive.",
@@ -46,15 +55,6 @@ const projects = [
     github: "https://github.com/hamiddiallo/pharmacise.git",
     demo: "https://pharmacie-hamid.vercel.app/",
     image: "/pharmacy.png",
-  },
-  {
-    title: "Application Web de Gestion de Stock",
-    description:
-      "Application web de gestion de stock et de facturation permettant de suivre les entrées et sorties de produits, gérer les fournisseurs, un paiement progressive des ventes, et générer automatiquement des factures claires et précises.",
-    technologies: ["Html", "Css", "JavaScript", "PHP"],
-    github: "https://github.com/hamiddiallo/gestionStock.git",
-    demo: "",
-    image: "/GestionStock.png",
   },
   {
     title: "Système de recommandation dans les services de streaming de video educatif",
