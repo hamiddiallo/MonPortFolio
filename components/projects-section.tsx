@@ -1,135 +1,283 @@
+import Image from "next/image"
 import { ExternalLink, Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 
-const projects = [
+import { Reveal } from "@/components/reveal"
+import { SectionHeading } from "@/components/section-heading"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+
+type Project = {
+  title: string
+  category: string
+  highlight: string
+  description: string
+  technologies: string[]
+  github: string
+  demo: string
+  image: string
+}
+
+const projects: Project[] = [
   {
-    title: "Application Web de Gestion de Stock",
+    title: "SaaS de facturation & gestion",
+    category: "SaaS · Serveur",
+    highlight: "Auth, paiements, multi-entreprise — produit complet livré de A a Z.",
     description:
-      "Application web de gestion de stock et de facturation permettant de suivre les entrées et sorties de produits, gérer les fournisseurs, un paiement progressive des ventes, et générer automatiquement des factures claires et précises.",
-    technologies: ["Html", "Css", "JavaScript", "PHP"],
-    github: "https://github.com/hamiddiallo/gestionStock.git",
-    demo: "https://hamid-stock.up.railway.app/",
-    image: "/GestionStock.png",
-  },
-  {
-    title: "Site de Restaurant Gastronomique",
-    description:
-      "Site web moderne pour un restaurant avec système de réservation en ligne, menu digital interactif et présentation élégante des plats. L'application inclut une galerie photo des spécialités, les horaires d'ouverture, et les informations de contact. Design responsive mettant en valeur l'ambiance du restaurant avec des animations fluides et une interface utilisateur intuitive.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/hamiddiallo/restaurant-app.git",
-    demo: "https://restaurant-hamid.vercel.app/",
-    image: "/restaurant.png",
-  },
-  {
-    title: "SaaS de Facturation & Gestion",
-    description: "Plateforme SaaS complète dédiée à la création et la gestion de factures professionnelles pour entreprises. Le système propose des fonctionnalités multi-devises (GNF/CFA), une gestion avancée des abonnements avec paiements mobiles intégrés (Orange Money, Wave), et un tableau de bord administrateur détaillé pour le suivi des revenus et des utilisateurs. Inclut également la génération de PDF et un support client intégré.",
+      "Plateforme SaaS pour creer et piloter des factures professionnelles, avec multi-devises, abonnements, paiements mobiles (Wave / Orange Money), tableau de bord admin et generation de PDF.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "NextAuth"],
     github: "https://github.com/hamiddiallo/Facturation2.0.git",
     demo: "https://facturation2-0.vercel.app/",
     image: "/saasFacturation.png",
   },
   {
-    title: "Projet de Résolution de Labyrinthe",
+    title: "Application de gestion de stock",
+    category: "Application metier",
+    highlight: "API REST, base de donnees relationnelle, logique metier et facturation.",
     description:
-      "Ce projet implémente deux algorithmes classiques de parcours de graphes — DFS (Depth-First Search) et BFS (Breadth-First Search) — pour la résolution automatique de labyrinthes. Il permet de comparer leurs comportements en explorant les chemins possibles et en identifiant la route la plus courte vers la sortie. L’objectif est de démontrer les différences entre une exploration en profondeur et une exploration en largeur dans un environnement graphique interactif.",
+      "Application web de gestion de stock et de facturation : suivi des entrees/sorties, gestion fournisseurs, paiement progressif et generation de factures. Architecture MVC PHP avec persistance MySQL.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+    github: "https://github.com/hamiddiallo/gestionStock.git",
+    demo: "https://hamid-stock.up.railway.app/",
+    image: "/gestionStock.png",
+  },
+  {
+    title: "Recommandation video educative",
+    category: "Data · Python",
+    highlight: "Segmentation K-Means pour personnaliser l'experience apprenante.",
+    description:
+      "Systeme de recommandation base sur le clustering K-Means pour proposer des contenus adaptes aux comportements et centres d'interet des apprenants. Pipeline Python (Pandas, Scikit-Learn) integre dans une interface PHP.",
+    technologies: ["Python", "Scikit-Learn", "Pandas", "PHP"],
+    github: "",
+    demo: "",
+    image: "/data-analytics-portfolio.png",
+  },
+  {
+    title: "Site de restaurant gastronomique",
+    category: "Site vitrine",
+    highlight: "Interface claire avec reservation et menu en ligne.",
+    description:
+      "Site pour un restaurant avec reservation en ligne, menu digital, galerie des plats et presentation de l'univers culinaire.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/hamiddiallo/restaurant-app.git",
+    demo: "https://restaurant-hamid.vercel.app/",
+    image: "/restaurant.png",
+  },
+  {
+    title: "Resolution de labyrinthe",
+    category: "Algorithmique",
+    highlight: "Comparer BFS et DFS dans un environnement graphique concret.",
+    description:
+      "Projet Java de visualisation d'algorithmes pour resoudre automatiquement des labyrinthes et comparer leurs strategies d'exploration.",
     technologies: ["Java", "DFS", "BFS"],
     github: "https://github.com/hamiddiallo/ProjetLabyrinthe.git",
     demo: "https://youtu.be/kgarYZ3U7LY",
     image: "/labyrinthe.png",
   },
   {
-    title: "Design Pattern",
+    title: "Design patterns",
+    category: "Architecture",
+    highlight: "Mettre en pratique abstract factory et composite dans un projet de cours.",
     description:
-      "Ce projet est un projet de classe qui met en pratique le pattern abstract factory pour creer deux fabriques de crackeur de mot de passe (en ligne et local). Et aussi le pattern composite pour creer un programme qui affiche le contenu de chaque repertoire depuis la racine specié comme la commande tree sur Linux",
+      "Exercices d'architecture logicielle autour de fabriques de crackeurs de mot de passe et d'un systeme d'affichage d'arborescence inspire de tree.",
     technologies: ["Java"],
     github: "https://github.com/hamiddiallo/ProjetDesignPattern.git",
     demo: "",
     image: "/designPattern.png",
   },
   {
-    title: "Site Web de Pharmacie en Ligne",
+    title: "Pharmacie en ligne",
+    category: "Site Web",
+    highlight: "Parcours utilisateur simple sur un catalogue sensible.",
     description:
-      "Plateforme e-commerce complète pour une pharmacie, permettant la vente en ligne de produits pharmaceutiques et para-pharmaceutiques. Le site inclut un système de gestion des stocks, un catalogue de produits organisé par catégories, et une interface administrateur pour gérer les commandes. Conçu avec une approche UX optimisée pour une navigation intuitive et accessible.",
+      "Site web vitrine pour une pharmacie avec catalogue, categories, gestion de stock et interface d'administration.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/hamiddiallo/pharmacise.git",
     demo: "https://pharmacie-hamid.vercel.app/",
     image: "/pharmacy.png",
   },
-  {
-    title: "Système de recommandation dans les services de streaming de video educatif",
-    description:
-      "Ce système de recommandation intelligent s’appuie sur des techniques de clustering, notamment l’algorithme K-Means, pour analyser les comportements des apprenants et regrouper leurs profils selon leurs centres d’intérêt. Intégré à une plateforme de streaming éducatif, il propose des contenus personnalisés afin d’optimiser l’expérience d’apprentissage de chaque utilisateur.",
-    technologies: ["Python", "Scikit-Learn", "Pandas", "PHP"],
-    github: "",
-    demo: "",
-    image: "/data-analytics-portfolio.png",
-  },
 ]
+
+const featuredProjects = projects.slice(0, 3)
+const archiveProjects = projects.slice(3)
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 md:py-32">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="space-y-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text">Projets</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full mx-auto" />
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Une sélection de projets académiques et personnels démontrant mes compétences techniques
-            </p>
-          </div>
+    <section id="projects" className="section-block">
+      <div className="section-shell space-y-12">
+        <Reveal>
+          <SectionHeading
+            index="03"
+            eyebrow="Projets"
+            title="Ma formation en génie logiciel, traduite en projets concrets du besoin à la solution"
+            description="Un aperçu de mes réalisations : applications web, systèmes back-end et solutions sur mesure développés tout au long de mon cursus."
+          />
+        </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="glass-effect rounded-lg overflow-hidden group hover:border-primary/50 transition-all duration-300"
-              >
-                <div className="relative overflow-hidden aspect-video">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
-                </div>
+        <div className="space-y-6">
+          {featuredProjects.map((project, index) => (
+            <Reveal key={project.title} delay={90 + index * 90}>
+              <article className="editorial-card group overflow-hidden lg:grid lg:grid-cols-[0.96fr_1.04fr]">
+                <div className={index % 2 === 1 ? "lg:order-last" : ""}>
+                  <div className="project-image-wrap relative min-h-[320px] lg:min-h-full">
+                    <div className="absolute inset-4 md:inset-6">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(min-width: 1024px) 46vw, 100vw"
+                        className="object-contain object-center"
+                      />
+                    </div>
 
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+                    <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-5">
+                      <Badge variant="secondary">{project.category}</Badge>
+                      <span className="font-mono text-[0.72rem] uppercase tracking-[0.26em] text-foreground/70">
+                        0{index + 1}
+                      </span>
+                    </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-3 pt-2">
-                    {project.github && project.github.trim() !== "" && (
-                      <Button size="sm" variant="outline" asChild>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 mr-2" />
-                          Code
-                        </a>
-                      </Button>
-                    )}
-                    {project.demo && project.demo.trim() !== "" && (
-                      <Button size="sm" asChild>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          Démo
-                        </a>
-                      </Button>
-                    )}
+                    <div className="absolute inset-x-0 bottom-0 z-10 p-6">
+                      <p className="numeric-label">0{index + 1}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+
+                <div className="flex flex-col justify-between p-6 md:p-8">
+                  <div>
+                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.26em] text-primary">
+                      {project.highlight}
+                    </p>
+                    <h3 className="mt-4 font-display text-[clamp(2.1rem,4vw,3.4rem)] leading-[0.95] tracking-[-0.045em] text-foreground">
+                      {project.title}
+                    </h3>
+                    <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground">{project.description}</p>
+
+
+                    <div className="mt-6 flex flex-wrap gap-2.5">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    {project.github ? (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="border-primary/45 bg-background/55 text-foreground hover:border-primary hover:bg-primary/12 normal-case tracking-normal"
+                        asChild
+                      >
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Voir le code du projet ${project.title}`}
+                        >
+                          <Github className="size-4" />
+                          Voir le code
+                        </a>
+                      </Button>
+                    ) : null}
+
+                    {project.demo ? (
+                      <Button
+                        size="sm"
+                        className="bg-primary text-primary-foreground shadow-[0_12px_26px_rgba(0,0,0,0.2)] hover:bg-primary/92 normal-case tracking-normal"
+                        asChild
+                      >
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Voir la demo du projet ${project.title}`}
+                        >
+                          <ExternalLink className="size-4" />
+                          Voir la demo
+                        </a>
+                      </Button>
+                    ) : null}
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={120}>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+            {archiveProjects.map((project, index) => (
+              <article key={project.title} className="editorial-card flex h-full flex-col p-5">
+                <div className="flex flex-wrap items-start gap-3">
+                  <div className="min-w-0 flex-1">
+                    <p className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-primary">
+                      Projet {index + 1}
+                    </p>
+                    <h3 className="mt-3 break-words font-display text-[clamp(1.5rem,2.2vw,1.9rem)] leading-[0.95] tracking-[-0.04em] text-foreground">
+                      {project.title}
+                    </h3>
+                  </div>
+                  <Badge
+                    variant="secondary"
+                    className="ml-auto max-w-[8.5rem] whitespace-normal px-2.5 py-1 text-center text-[0.62rem] normal-case tracking-[0.04em] leading-tight"
+                  >
+                    {project.category}
+                  </Badge>
+                </div>
+
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">{project.description}</p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.technologies.slice(0, 4).map((tech) => (
+                    <Badge key={tech} variant="outline">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+
+                <div className="mt-auto flex flex-wrap gap-3 pt-6">
+                  {project.github ? (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="border-primary/40 bg-background/50 text-foreground hover:border-primary hover:bg-primary/12 normal-case tracking-normal"
+                      asChild
+                    >
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Voir le code du projet ${project.title}`}
+                      >
+                        <Github className="size-4" />
+                        Voir le code
+                      </a>
+                    </Button>
+                  ) : null}
+                  {project.demo ? (
+                    <Button
+                      size="sm"
+                      className="bg-primary text-primary-foreground shadow-[0_10px_22px_rgba(0,0,0,0.18)] hover:bg-primary/92 normal-case tracking-normal"
+                      asChild
+                    >
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Voir la demo du projet ${project.title}`}
+                      >
+                        <ExternalLink className="size-4" />
+                        Voir la demo
+                      </a>
+                    </Button>
+                  ) : null}
+                </div>
+              </article>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

@@ -8,10 +8,14 @@ import { ContactSection } from "@/components/contact-section"
 import { Navigation } from "@/components/navigation"
 
 export default function Home() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="page-shell min-h-screen bg-background text-foreground">
+      <div className="ambient-orb ambient-orb-primary" />
+      <div className="ambient-orb ambient-orb-accent" />
       <Navigation />
-      <main>
+      <main className="relative z-10">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
@@ -20,9 +24,10 @@ export default function Home() {
         <ExperienceSection />
         <ContactSection />
       </main>
-      <footer className="border-t border-border py-8">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2025 Portfolio. Conçu et développé avec passion.</p>
+      <footer className="section-shell relative z-10 pb-10 pt-4">
+        <div className="outline-panel flex flex-col gap-3 rounded-[1.5rem] px-6 py-5 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+          <p>© {currentYear} Mamadou Abdoul Hamid Diallo.</p>
+          <p className="font-mono text-[0.72rem] uppercase tracking-[0.28em] text-foreground/70">Dakar-Senegal · Conakry-Guinée</p>
         </div>
       </footer>
     </div>

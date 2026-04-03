@@ -1,99 +1,96 @@
 import { GraduationCap } from "lucide-react"
 
+import { Reveal } from "@/components/reveal"
+import { SectionHeading } from "@/components/section-heading"
+import { Badge } from "@/components/ui/badge"
+
 const education = [
   {
-    degree: "Master En Génie Logiciel et Système d'information",
-    institution: "École Supérieur Polytechnique de Dakar",
-    period: "2024 - Present",
+    degree: "Master en genie logiciel et systemes d'information",
+    institution: "Ecole Superieure Polytechnique de Dakar",
+    period: "2024 - Aujourd'hui",
     description:
-      "Formation avancée en architecture logicielle, développement d'applications d'entreprise, systèmes d'information et gestion de projets informatiques.",
+      "Formation avancee en architecture logicielle, applications d'entreprise, systemes d'information et gestion de projets informatiques.",
   },
   {
-    degree: "Licence En Génie Logiciel et Système d'information",
-    institution: "École Supérieur Polytechnique de Dakar",
+    degree: "Licence en genie logiciel et systemes d'information",
+    institution: "Ecole Superieure Polytechnique de Dakar",
     period: "2023 - 2024",
-    description:
-      "Formation approfondie en développement logiciel, conception de systèmes d'information et méthodologies agiles.",
+    description: "Approfondissement du developpement logiciel, de la conception des SI et des methodes agiles.",
   },
   {
-    degree: "Diplôme Supérieur de Technologie en Informatique",
-    institution: "École Supérieur Polytechnique de Dakar",
+    degree: "Diplome superieur de technologie en informatique",
+    institution: "Ecole Superieure Polytechnique de Dakar",
     period: "2023 - 2024",
-    description:
-      "Formation technique en informatique couvrant le développement, les réseaux et l'administration système.",
+    description: "Base technique large: developpement, reseaux, administration systeme et logique d'exploitation.",
   },
   {
-    degree: "Cours de langue Anglaise",
+    degree: "Cours de langue anglaise",
     institution: "Center Of Language Learning And Professional Training",
     period: "2020 - 2021",
-    description: "Formation linguistique professionnelle en anglais pour le milieu technique et professionnel.",
+    description: "Formation linguistique orientee environnement professionnel et technique.",
   },
   {
-    degree: "INFORMATIQUE Bureautique",
+    degree: "Informatique bureautique",
     specialization: "Excel, Word, PowerPoint",
-    institution: "DEVY INTERNATIONAL CONSULTING",
+    institution: "DEVY International Consulting",
     period: "2019 - 2020",
-    description: "Maîtrise des outils bureautiques Microsoft Office pour la productivité professionnelle.",
+    description: "Maitrise des outils bureautiques pour la productivite et la communication professionnelle.",
   },
   {
-    degree: "Baccalauréat",
-    institution: "Lycée Saint-André, Guinée (Labé)",
+    degree: "Baccalaureat",
+    institution: "Lycee Saint-Andre, Labe",
     period: "2016 - 2019",
-    description: "Diplôme de fin d'études secondaires.",
+    description: "Diplome de fin d'etudes secondaires en Guinee.",
   },
 ]
 
 export function EducationSection() {
   return (
-    <section id="education" className="py-20 md:py-32 bg-card/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto space-y-12">
-          <div className="space-y-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text">Diplômes et Formations</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full mx-auto" />
-          </div>
+    <section id="education" className="section-block">
+      <div className="section-shell grid gap-12 lg:grid-cols-[0.84fr_1.16fr]">
+        <Reveal>
+          <SectionHeading
+            index="04"
+            eyebrow="Formation"
+            title="Une formation solide pour construire des Solutions fiables."
+            description="Chaque etape m'a fait progresser en architecture logicielle, en methode et en execution technique."
+          />
+        </Reveal>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-primary/30 hidden sm:block" />
-
-            <div className="space-y-12">
-              {education.map((item, index) => (
-                <div
-                  key={index}
-                  className={`relative flex flex-col sm:flex-row gap-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
-                >
-                  {/* Timeline dot */}
-                  <div className="absolute left-0 md:left-1/2 -translate-x-1/2 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-primary ring-4 ring-background" />
+        <div className="space-y-4">
+          {education.map((item, index) => (
+            <Reveal key={`${item.degree}-${item.period}`} delay={70 + index * 60} className="editorial-card p-6 md:p-7">
+              <div className="grid gap-5 md:grid-cols-[9rem_1fr]">
+                <div className="space-y-4 border-b border-border/70 pb-5 md:border-b-0 md:border-r md:pb-0 md:pr-6">
+                  <div className="flex items-center gap-3">
+                    <GraduationCap className="size-5 text-primary" />
+                    <p className="font-mono text-[0.64rem] uppercase tracking-[0.24em] text-muted-foreground">
+                      Etape {index + 1}
+                    </p>
                   </div>
-
-                  {/* Content */}
-                  <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : ""}`}>
-                    <div className="glass-effect p-6 rounded-lg space-y-3 hover:border-primary/50 transition-colors">
-                      <div className="flex items-start gap-3 sm:hidden">
-                        <GraduationCap className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                        <div className="flex-1">
-                          <p className="text-sm text-primary font-mono">{item.period}</p>
-                          <h3 className="text-xl font-semibold mt-1">{item.degree}</h3>
-                        </div>
-                      </div>
-                      <div className="hidden sm:block">
-                        <p className="text-sm text-primary font-mono">{item.period}</p>
-                        <h3 className="text-xl font-semibold mt-1">{item.degree}</h3>
-                      </div>
-                      {item.specialization && <p className="text-accent font-medium">{item.specialization}</p>}
-                      <p className="text-muted-foreground font-medium">{item.institution}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Spacer for alternating layout */}
-                  <div className="flex-1 hidden md:block" />
+                  <p className="font-display text-[1.75rem] leading-none tracking-[-0.04em] text-foreground">
+                    {item.period}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
+
+                <div>
+                  <h3 className="font-display text-[2rem] leading-none tracking-[-0.04em] text-foreground">
+                    {item.degree}
+                  </h3>
+                  {item.specialization ? (
+                    <div className="mt-4">
+                      <Badge variant="secondary">{item.specialization}</Badge>
+                    </div>
+                  ) : null}
+                  <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.24em] text-primary">
+                    {item.institution}
+                  </p>
+                  <p className="mt-4 text-sm leading-7 text-muted-foreground">{item.description}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
