@@ -38,7 +38,7 @@ const projects: Project[] = [
     technologies: ["HTML", "CSS", "JavaScript", "PHP"],
     github: "https://github.com/hamiddiallo/gestionStock.git",
     demo: "https://hamid-stock.up.railway.app/",
-    image: "/gestionStock.png",
+    image: "/GestionStock.png",
   },
   {
     title: "Recommandation video educative",
