@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         className={`font-sans ${GeistSans.variable} ${GeistMono.variable} bg-background text-foreground selection:bg-primary/30 selection:text-foreground`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem storageKey="hamid-portfolio-theme">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem storageKey="hamid-portfolio-theme">
           {children}
         </ThemeProvider>
         <Analytics />

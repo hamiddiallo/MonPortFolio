@@ -30,15 +30,37 @@ const projects: Project[] = [
     image: "/saasFacturation.png",
   },
   {
-    title: "Application de gestion de stock",
-    category: "Application metier",
-    highlight: "API REST, base de donnees relationnelle, logique metier et facturation.",
+    title: "ERP de Gestion Commerciale & Stock",
+    category: "ERP · Gestion d'Inventaire · Professionnel",
+    highlight: "Architecture N-Tiers, Multi-dépôt, Multi-rôle, Multi-utilisateur, gestion des permissions & Intégrité Transactionnelle.",
     description:
-      "Application web de gestion de stock et de facturation : suivi des entrees/sorties, gestion fournisseurs, paiement progressif et generation de factures. Architecture MVC PHP avec persistance MySQL.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+      "Solution logicielle robuste pour le pilotage d'activité commerciale : gestion multi-entrepôts, cycle complet achats/ventes, suivi des créances clients, et génération de reporting financier automatisé avec exports PDF/XSL , .",
+    technologies: ["PHP 8.x", "MySQL (PDO)", "Phinx", "Dompdf", "Monolog", "Composer"],
     github: "https://github.com/hamiddiallo/gestionStock.git",
     demo: "https://hamid-stock.up.railway.app/",
     image: "/GestionStock.png",
+  },
+  {
+    title: "Backend E-Commerce API",
+    category: "Backend · API REST",
+    highlight: "Architecture N-Tier, Auth Supabase, Gestion de stock & PDF — une base solide et scalable.",
+    description:
+      "API REST robuste pour une plateforme e-commerce complète. Gère le cycle de vie des produits, le panier, les commandes avec verrouillage de sécurité, et la génération automatique de factures professionnelles en PDF.",
+    technologies: ["Node.js", "Express", "Supabase", "Puppeteer", "Swagger", "JWT"],
+    github: "https://github.com/hamiddiallo/backEnd_E_Commerce.git",
+    demo: "https://backend-e-commerce-muti.onrender.com/api-docs/",
+    image: "/apiEcommerce.png",
+  },
+  {
+    title: "Resolution de labyrinthe",
+    category: "Algorithmique",
+    highlight: "Comparer BFS et DFS dans un environnement graphique concret.",
+    description:
+      "Projet Java de visualisation d'algorithmes pour resoudre automatiquement des labyrinthes et comparer leurs strategies d'exploration.",
+    technologies: ["Java", "Algo DFS", "Algo BFS"],
+    github: "https://github.com/hamiddiallo/ProjetLabyrinthe.git",
+    demo: "https://youtu.be/kgarYZ3U7LY",
+    image: "/labyrinthe.png",
   },
   {
     title: "Recommandation video educative",
@@ -61,17 +83,6 @@ const projects: Project[] = [
     github: "https://github.com/hamiddiallo/restaurant-app.git",
     demo: "https://restaurant-hamid.vercel.app/",
     image: "/restaurant.png",
-  },
-  {
-    title: "Resolution de labyrinthe",
-    category: "Algorithmique",
-    highlight: "Comparer BFS et DFS dans un environnement graphique concret.",
-    description:
-      "Projet Java de visualisation d'algorithmes pour resoudre automatiquement des labyrinthes et comparer leurs strategies d'exploration.",
-    technologies: ["Java", "DFS", "BFS"],
-    github: "https://github.com/hamiddiallo/ProjetLabyrinthe.git",
-    demo: "https://youtu.be/kgarYZ3U7LY",
-    image: "/labyrinthe.png",
   },
   {
     title: "Design patterns",
@@ -97,8 +108,8 @@ const projects: Project[] = [
   },
 ]
 
-const featuredProjects = projects.slice(0, 3)
-const archiveProjects = projects.slice(3)
+const featuredProjects = projects.slice(0, 4)
+const archiveProjects = projects.slice(4)
 
 export function ProjectsSection() {
   return (
