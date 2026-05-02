@@ -23,10 +23,10 @@ const projects: Project[] = [
     category: "SaaS · Serveur",
     highlight: "Auth, paiements, multi-entreprise — produit complet livré de A a Z.",
     description:
-      "Plateforme SaaS pour creer et piloter des factures professionnelles, avec multi-devises, abonnements, paiements mobiles (Wave / Orange Money), tableau de bord admin et generation de PDF.",
+      "Plateforme SaaS pour creer et piloter des factures professionnelles, avec multi-devises, abonnements, paiements mobiles (Wave / Orange Money), tableau de bord admin et generation et partage des PDF via Api webShare.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "NextAuth"],
-    github: "https://github.com/hamiddiallo/Facturation2.0.git",
-    demo: "https://facturation2-0.vercel.app/",
+    github: "",
+    demo: "https://facturation3-0.vercel.app",
     image: "/saasFacturation.png",
   },
   {
@@ -63,15 +63,26 @@ const projects: Project[] = [
     image: "/labyrinthe.png",
   },
   {
-    title: "Recommandation video educative",
-    category: "Data · Python",
-    highlight: "Segmentation K-Means pour personnaliser l'experience apprenante.",
+    title: "Plateforme Vidéo Éducative - Backend API",
+    category: "Backend / API RESTFULL",
+    highlight: "API RESTFULL sécurisée avec JWT et architecture N-tier complète pour une plateforme de vidéos éducatives.",
     description:
-      "Systeme de recommandation base sur le clustering K-Means pour proposer des contenus adaptes aux comportements et centres d'interet des apprenants. Pipeline Python (Pandas, Scikit-Learn) integre dans une interface PHP.",
-    technologies: ["Python", "Scikit-Learn", "Pandas", "PHP"],
-    github: "",
-    demo: "",
-    image: "/data-analytics-portfolio.png",
+      "Backend Java Spring Boot exposant une API RESTful pour gérer une plateforme d'apprentissage par vidéo. L'architecture N-tier repose sur un pattern DTO strict (séparation Request/Response), une authentification JWT multi-rôles (Admin, Instructeur, Étudiant), un hachage BCrypt des mots de passe, et une documentation Swagger auto-générée. Le projet est entièrement conteneurisé avec Docker (build multi-étapes)",
+    technologies: [
+      "Java 21",
+      "Spring Boot 3.5",
+      "Spring Security",
+      "JWT (jjwt)",
+      "Spring Data JPA",
+      "MySQL 8",
+      "Docker",
+      "Swagger / OpenAPI",
+      "Gradle",
+      "Lombok"
+    ],
+    github: "https://github.com/hamiddiallo/backEndVideoEducatif.git",
+    demo: "https://apivideoeducatif.onrender.com/swagger-ui/index.html",           // à renseigner si tu as une URL Render déployée
+    image: "/videoeducatif.png",
   },
   {
     title: "Site de restaurant gastronomique",
@@ -108,8 +119,8 @@ const projects: Project[] = [
   },
 ]
 
-const featuredProjects = projects.slice(0, 4)
-const archiveProjects = projects.slice(4)
+const featuredProjects = projects.slice(0, 5)
+const archiveProjects = projects.slice(5)
 
 export function ProjectsSection() {
   return (
