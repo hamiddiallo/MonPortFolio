@@ -63,6 +63,17 @@ const projects: Project[] = [
     image: "/labyrinthe.png",
   },
   {
+    title: "To Do App Mobile ",
+    category: "Developpement Mobile",
+    highlight: "Developpemet d'une application mobile de gestion des taches",
+    description:
+      "Application mobile de gestion de tâches développée avec Flutter, exploitant SQLite comme base de données locale via un helper dédié implémentant le pattern Singleton. L'interface repose sur des StatefulWidget avec une architecture modulaire (méthodes de construction séparées) pour assurer la lisibilité et la maintenabilité du code. Les fonctionnalités couvrent la création, la modification et le suivi du statut des tâches, avec une gestion rigoureuse des ressources (dispose des controllers) et une navigation fluide entre les écrans.",
+    technologies: ["Flutter", "Dart","SQLite"],
+    github: "https://github.com/hamiddiallo/toDoAppMobile.git",
+    demo: "",
+    image: "/toDoApp.png",
+  },
+  {
     title: "Plateforme Vidéo Éducative - Backend API",
     category: "Backend / API RESTFULL",
     highlight: "API RESTFULL sécurisée avec JWT et architecture N-tier complète pour une plateforme de vidéos éducatives.",
@@ -119,8 +130,8 @@ const projects: Project[] = [
   },
 ]
 
-const featuredProjects = projects.slice(0, 5)
-const archiveProjects = projects.slice(5)
+const featuredProjects = projects.slice(0, 6)
+const archiveProjects = projects.slice(6)
 
 export function ProjectsSection() {
   return (
